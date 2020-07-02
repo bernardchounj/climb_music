@@ -5,6 +5,36 @@
     <title>注册</title>
 </head>
 <body>
-注册页面
+<link rel="stylesheet" href="/static/css/login_reg/reg_css.css">
+<script src="/static/js/jquery.min.js"></script>
+<div class="main_frame">
+    <div class="form_div">
+        <form action="" method="post">
+            <h1 class="head">注册新账户</h1>
+            <span class="parent">
+                <p class="show_inline">用户名:</p><input type="text" class="show_inline" name="username" id="username" placeholder="请输入用户名" maxlength="32" required>
+            </span>
+            <span class="parent">
+                <p class="show_inline">昵称:</p><input type="text" class="show_inline" name="nickname" id="nickname" placeholder="请输入昵称" maxlength="50">
+            </span>
+
+            <span class="parent">
+                <p class="show_inline">手机号码:</p><input type="text" class="show_inline" name="phone" id="phone" placeholder="请输入手机号码" maxlength="11" required>
+                <input type="button" value="获取验证码" onclick="settime(this)"> <!-- 验证码 -->
+            </span>
+
+            <span class="parent">
+                <p class="show_inline">密码:</p><input type="password" name="password_1" id="password_1" class="show_inline" placeholder="请输入密码" required>
+            </span>
+            <span class="parent">
+                <p class="show_inline">确认密码:</p><input type="password" name="password_2" id="password_2" class="show_inline" placeholder="请再次输入密码进行验证" required>
+            </span>
+            <span>
+                <p><input type="button" value="注册" class="register_btn" onclick="regist()"></p>
+            </span>
+        </form>
+    </div>
+</div>
+<script src="/static/js/login_reg/reg_js.js"></script>
 </body>
 </html>

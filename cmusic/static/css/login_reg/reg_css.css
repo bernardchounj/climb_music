@@ -1,0 +1,58 @@
+.main_frame, .form_div{
+    baimarguin:0 auto;
+    overflow:hidden;
+}
+
+.main_frame{
+    position:fixed;
+    z-index:9999;
+    top:50%;
+    left:50%;
+    width:250px; /* 按需改变bai数值 */
+    height:560px; /* 按需改变数值 */
+    margin-top:-280px; /* height数值的一半 */
+    margin-left:-200px; /* width数值的一半 */
+    /*-webkit-box-shadow:0 0 3px rgba(0,0,0,.2);*/
+    /*-moz-box-shadow:0 0 3px rgba(0,0,0,.2);*/
+    box-shadow:3px 3px 3px grey;
+    background: rgba(255,255,255,0.5);
+    padding:10px;
+}
+
+.form_div{
+    color: black;
+}
+.parent>input:first-of-type{
+    width: 200px;
+    height: 24px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    font-size: 16px;
+    outline: none;
+}
+
+
+.show_inline{
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.parent>input:first-of-type:focus {
+    border: 1px solid black;
+    padding-left: 5px;
+}
+
+.register_btn:hover{
+    /*height: 30px;*/
+    /*border-radius: 3px;*/
+    cursor: pointer;
+}
+
+body{
+    background: url("/static/imgs/reg_bg/reg_bg.jpeg");
+    background-repeat: no-repeat;
+}
+
+.head{
+    text-align: center;
+}
