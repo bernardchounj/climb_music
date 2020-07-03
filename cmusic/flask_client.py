@@ -33,7 +33,7 @@ def register():
 @app.route('/<username>/info')
 def info(username):
     #个人信息
-    return send_file('templates/about.html')
+    return send_file('templates/user_info.html')
 
 @app.route('/<username>/change_info')
 def change_info(username):

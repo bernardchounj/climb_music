@@ -1,0 +1,54 @@
+.top_dir{
+    height: 300px;
+    width: 1275px;
+    background: url("/static/imgs/user_info/info_top_bg.jpg");
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.sub_dir{
+    background-color: rgba(0,0,0,0.3);
+    height: 100px;
+    width: 1275px;
+    position: absolute;
+    top: 30px;
+}
+
+.left_dir{
+    margin: 0 30px;
+    float: left;
+    list-style: none;
+    text-align: center;
+    line-height: 100px;
+}
+.left_dir>a{
+    color: white;
+    text-decoration: unset;
+}
+.right_dir{
+    margin: 0 30px;
+    float: right;
+    list-style: none;
+    text-align: center;
+    line-height: 100px;
+}
+.right_dir>a{
+    color: white;
+    text-decoration: unset;
+}
+
+
+
+.detail{
+    background-color: white;
+    height: 500px;
+    width: 350px;
+}
+
+
+
+
+body{
+    background-color: aquamarine;
+}

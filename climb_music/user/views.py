@@ -3,13 +3,34 @@ import json
 from django.http import JsonResponse
 from django.views import View
 from .models import UserProfile
+from mtoken.views import make_token
 # Create your views here.
 
 
 class UserView(View):
 
-    def get(self, request):
-        pass
+    def get(self, request, username=None):
+        json_str = request.body
+        json_obj = json.loads(json_str)
+        username = json_obj["username"]
+        password = json_obj["password"]
+
+        try:
+            user = UserProfile.objects.get(username=username)
+        except Exception as e:
+            print(e)
+            result = {"code": 10104, "error": "Your username or password is wrong, please try again"}
+            return JsonResponse(result)
+
+        if password != user.password:
+            result = {"code": 10105, "error": "Your username or password is wrong, please try again"}
+            return JsonResponse(result)
+        else:
+            result = {"code": 200, "username": user.username}
+            return JsonResponse(result)
+
+
+
 
     def post(self, request):
         json_str = request.body
@@ -40,5 +61,10 @@ class UserView(View):
             print("create user error %s" % e)
             result = {"code": 10103, "error": "The username is existed!"}
             return JsonResponse(result)
-        result = {"code": 200, 'username': user.username}
+
+        token = make_token(username)
+        result = {"code": 200, 'username': username, "data": {"token": token}}
         return JsonResponse(result)
+
+    def put(self, request, username):
+        pass

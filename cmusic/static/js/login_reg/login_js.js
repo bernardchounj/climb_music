@@ -12,6 +12,7 @@ $(function login() {
             contentType: "application/json",
             success: function (res) {
                 if (res.code == 200){
+                    alert("登录成功!")
                     window.localStorage.setItem("bcmusic_token", res.data.token);
                     window.localStorage.setItem("bcmusic_user", res.username);
                 }else{
