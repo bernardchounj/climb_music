@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from user import views as user_view
 
 
@@ -25,7 +25,7 @@ urlpatterns = [
 
     # htttp://127.0.0.1:8000/v1/user
     path("v1/users", user_view.UserView.as_view()),
-
+    path("v1/users/", include("user.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -5,13 +5,15 @@
     <title>个人中心</title>
 </head>
 <body>
+<script src="/static/js/jquery.min.js"></script>
 <link rel="stylesheet" href="/static/css/user_info/user_info.css">
+<script src="/static/js/user_info/userinfo_js.js"></script>
 <div class="top_dir">
     <!-- 导航栏 -->
     <div class="sub_dir">
         <!-- 放具体导航选项 -->
         <!-- 首页 个人收藏 购物车 评论   / 修改个人信息 退出 -->
-        <li class="left_dir"><a href="">首页</a></li>
+        <li class="left_dir"><a href="/index">首页</a></li>
         <li class="left_dir"><a href="">个人收藏</a></li>
         <li class="left_dir"><a href="">购物车</a></li>
         <li class="left_dir"><a href="">我的评论</a></li>
@@ -21,23 +23,48 @@
     </div>
 </div>
 
-<div class="detail">
-    <!-- 左侧区域块 -->
-    <!-- 通过数据库导入个人信息 -->
+<div class="r_l">
+    <div class="upfont_div">
+        <p class="up_font show_left">关于我</p>
+        <p class="up_font show_right">个人信息</p>
+    </div>
+    <hr>
+    <div class="detail">
+        <!-- 左侧区域块 -->
+        <!-- 通过数据库导入个人信息 -->
+        <div class="leftdir_div">
+            <!-- 我的喜欢 我听过 我购买过 我的钱包 我的收货地址 -->
+            <li class="like" onclick="showLike()">我的喜欢</li>
+            <li class="listend">我听过</li>
+            <li class="bought">我买过</li>
+            <li class="wallet">我的钱包</li>
+            <li class="delivery">我的收货地址</li>
+        </div>
+        <div class="rightdt_div">
+            <div class="like_show"></div>
+            <div class="listened_show"></div>
+            <div class="bought_show"></div>
+            <div class="wallet_show"></div>
+            <div class="delivery_show"></div>
+        </div>
+    </div>
 
-
-
+    <div class="person_intro">
+        <!-- 显示用户头像 个性签名 个人描述 -->
+        <div class="avatar">
+            <span class="avatar_ user_avatar_show"></span>  <!-- 使用ajax导入用户头像 -->
+        </div>
+        <br>
+        <div class="nickname">
+            <p>昵称:</p>
+            <p class="user_nickname_show"></p> <!-- 使用ajax导入用户昵称 -->
+        </div>
+        <br>
+        <div class="sign">
+            <p>个性签名:</p>  <!-- 使用ajax导入用户个性签名 -->
+            <p class="user_sign_show"></p>
+        </div>
+    </div>
 </div>
-
-<div class="person_intro">
-    <!-- 显示用户头像 个性签名 个人描述 -->
-
-
-
-
-
-</div>
-
-
 </body>
 </html>

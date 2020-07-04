@@ -4,30 +4,15 @@ from django.http import JsonResponse
 from django.views import View
 from .models import UserProfile
 from mtoken.views import make_token
+from django.utils.decorators import method_decorator
+from tools.logging_dec import logging_check
 # Create your views here.
 
 
 class UserView(View):
 
     def get(self, request, username=None):
-        json_str = request.body
-        json_obj = json.loads(json_str)
-        username = json_obj["username"]
-        password = json_obj["password"]
-
-        try:
-            user = UserProfile.objects.get(username=username)
-        except Exception as e:
-            print(e)
-            result = {"code": 10104, "error": "Your username or password is wrong, please try again"}
-            return JsonResponse(result)
-
-        if password != user.password:
-            result = {"code": 10105, "error": "Your username or password is wrong, please try again"}
-            return JsonResponse(result)
-        else:
-            result = {"code": 200, "username": user.username}
-            return JsonResponse(result)
+        pass
 
 
 
@@ -66,5 +51,16 @@ class UserView(View):
         result = {"code": 200, 'username': username, "data": {"token": token}}
         return JsonResponse(result)
 
+    @method_decorator(logging_check)
     def put(self, request, username):
-        pass
+        # method_decorator 将传入的 函数装饰器 转换为 方法装饰器
+        json_str = request.body
+        json_obj = json.loads(json_str)
+
+        request.myuser.sign = json_obj['sign']
+        request.myuser.nickname = json_obj['nickname']
+        request.myuser.info = json_obj['info']
+        request.myuser.save()
+
+        result = {'code': 200, 'username': request.myuser.username}
+        return JsonResponse(result)

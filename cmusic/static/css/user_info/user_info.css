@@ -1,5 +1,5 @@
 .top_dir{
-    height: 300px;
+    height: 260px;
     width: 1275px;
     background: url("/static/imgs/user_info/info_top_bg.jpg");
     background-repeat: no-repeat;
@@ -25,6 +25,9 @@
 .left_dir>a{
     color: white;
     text-decoration: unset;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
 }
 .right_dir{
     margin: 0 30px;
@@ -36,15 +39,100 @@
 .right_dir>a{
     color: white;
     text-decoration: unset;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
+.r_l{
+    height: 600px;
+    width: 1275px;
+    position: relative;
+}
+.upfont_div{
+    margin-top: 5px;
+    background-color: rgba(0,0,0,0.4);
+}
+.up_font{
+    color: white;
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.show_left{
+    margin-left: 50px;
+    text-align: left;
+}
+.show_right{
+    margin-left: 1000px;
+    text-align: right;
+}
 
 
 .detail{
-    background-color: white;
-    height: 500px;
-    width: 350px;
+    margin-top: 3px;
+    background-color: darkgrey;
+    height: 550px;
+    width: 880px;
+    position: absolute;
+    left: 0;
 }
+.leftdir_div{
+    height: 550px;
+    width: 220px;
+    position: absolute;
+    left: 0;
+}
+.leftdir_div>li{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    /*background-color: rgba(0,0,0,0.4);*/
+    line-height: 110px;
+    text-align: center;
+    transition: 0.2s;
+}
+.leftdir_div>li:hover{
+    cursor: pointer;
+    background-color: black;
+}
+.rightdt_div{
+    height: 550px;
+    width: 660px;
+    background-color: green;
+    position: absolute;
+    right: 0;
+}
+
+
+.person_intro{
+    margin-top: 3px;
+    background-color: white;
+    height: 550px;
+    width: 380px;
+    position: absolute;
+    right: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.avatar>avatar_{
+    margin-left: 140px;
+    height:100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
 
 
 
@@ -52,3 +140,4 @@
 body{
     background-color: aquamarine;
 }
+

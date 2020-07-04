@@ -8,5 +8,5 @@ from django.urls import path
 from .views import UserView as user_view
 
 urlpatterns = [
-    # path(),
+    path("<str:username>", user_view.as_view()),
 ]
