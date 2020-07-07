@@ -126,10 +126,31 @@
     width: 100px;
     border-radius: 50%;
 }
+.rightdt_div{
+    /*position: absolute;*/
+    /*right: 0;*/
+}
 
-
-
-
+.like_show{
+    /*position: absolute;*/
+    z-index: 0;
+}
+.listened_show{
+    /*position: absolute;*/
+    z-index: 0;
+}
+.bought_show{
+    /*position: absolute;*/
+    z-index: 0;
+}
+.wallet_show{
+    /*position: absolute;*/
+    z-index: 0;
+}
+.delivery_show{
+    /*position: absolute;*/
+    z-index: 0;
+}
 
 
 

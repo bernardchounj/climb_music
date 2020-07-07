@@ -2,6 +2,8 @@ import hashlib
 import json
 from django.http import JsonResponse
 from django.views import View
+
+from like.models import Likes
 from .models import UserProfile
 from mtoken.views import make_token
 from django.utils.decorators import method_decorator
@@ -10,9 +12,24 @@ from tools.logging_dec import logging_check
 
 
 class UserView(View):
+    def make_like(self, username):
+        res = {"code": 200, "data": {}}
+        likes = Likes.objects.filter(user_profile_id=username)
+        for like in likes:
+            res["id"] = like.id
+            res["sing"] = like.sing
+            res["singer"] = like.singer
+            res["sstatus"] = like.status
+        return res
 
     def get(self, request, username=None):
-        pass
+        # http://127.0.0.1:8000/v1/users/bernard?like=1
+        for k in request.GET.keys():
+            print(k)
+        # print(key)
+        # if key == "like":
+        res = self.make_like(username)
+        return JsonResponse(res)
 
 
 

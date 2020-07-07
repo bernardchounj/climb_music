@@ -5,8 +5,10 @@
     <title>个人中心</title>
 </head>
 <body>
-<script src="/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
 <link rel="stylesheet" href="/static/css/user_info/user_info.css">
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/user_info/userinfo_js.js"></script>
 <div class="top_dir">
     <!-- 导航栏 -->
@@ -35,10 +37,10 @@
         <div class="leftdir_div">
             <!-- 我的喜欢 我听过 我购买过 我的钱包 我的收货地址 -->
             <li class="like" onclick="showLike()">我的喜欢</li>
-            <li class="listend">我听过</li>
-            <li class="bought">我买过</li>
-            <li class="wallet">我的钱包</li>
-            <li class="delivery">我的收货地址</li>
+            <li class="listend" onclick="listendShow()">我听过</li>
+            <li class="bought" onclick="boughtShow()">我买过</li>
+            <li class="wallet" onclick="walletShow()">我的钱包</li>
+            <li class="delivery" onclick="addressShow()">我的收货地址</li>
         </div>
         <div class="rightdt_div">
             <div class="like_show"></div>

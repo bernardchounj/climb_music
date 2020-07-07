@@ -1,4 +1,4 @@
-$(function login() {
+function login() {
         var username = $("#username").val();
         var password = $("#password").val();
 
@@ -15,9 +15,10 @@ $(function login() {
                     alert("登录成功!")
                     window.localStorage.setItem("bcmusic_token", res.data.token);
                     window.localStorage.setItem("bcmusic_user", res.username);
+                    window.location.href = username + "/info"
                 }else{
                     alert(res.error)
                 }
             }
         })
-})
+}

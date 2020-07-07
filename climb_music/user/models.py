@@ -30,3 +30,12 @@ class UserProfile(models.Model):
 
     class Meta:
         db_table = "user_user_profile"
+
+
+# class Likes(models.Model):
+#     sing = models.CharField(verbose_name="歌名", max_length=128)
+#     singer = models.CharField(verbose_name="歌手", max_length=50)
+#     status = models.IntegerField(verbose_name="收藏", default="已收藏")
+#
+#     class Meta:
+#         db_table = "user_likes"
