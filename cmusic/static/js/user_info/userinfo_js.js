@@ -118,7 +118,6 @@ function listendShow() {
                         html_show += "</td>"
                         $(".like_show").html(html_show)
                     }else{
-
                         $(".like_show").html("空空如也")
                     }
                 }else{
@@ -154,10 +153,8 @@ function boughtShow() {
                 html_show += "<th>"
                 html_show += "bought time"
                 html_show += "</th>"
-                html_show += "<th>"
-                html_show += "CD or Media"
-                html_show += "</th>"
                 html_show += "</tr>"
+                $(".bought_show").html(html_show);
             }else{
                 alert(result.error)
             }
